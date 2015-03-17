@@ -3,7 +3,7 @@
 
 import EB3IRC
 
-import json, sys
+import json, sys, threading
 
 bots = dict()
 
@@ -33,6 +33,9 @@ class configulator( object ):
                 print( "[ERROR] Config file ({f}) not found! Are you sure that it's there?".format(f=confFile) )
                 sys.exit(2)
     
+class TheWrapper( theading.thread ):
+    """ Wrapper for EB3 submodules """
+
 
 
 
