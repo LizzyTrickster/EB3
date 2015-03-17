@@ -13,6 +13,7 @@ class configulator( object ):
     """ Configuration Manager """
     def __init__(self, create=0, confFile="EB3.json", dataDirBase="data/"):
         self.cFile = str( confFile )
+        self.dataDir = dataDirBase
         try:
             with open(self.cFile, "r") as theFile: # My variable names are awesome, dont lie....
                 self.conf = json.loads( theFile.read() )
@@ -41,5 +42,5 @@ if __name__ == "__main__":
 #    bID = 1
 #    for IRCBot in config.IRC:
 #        # { srv="localhost", prt=6667, useSSL=False, sPass="", nName="EB3", rName="EB3"}
-#        bots[ bID ] = EB3IRC.EB3( GlobalData, IRCBot )
+#        bots[ bID ] = EB3IRC.EB3( _wrapperSelf, IRCBot, config.dataDir )
 #        bID = bID + 1

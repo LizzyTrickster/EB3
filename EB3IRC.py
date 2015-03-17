@@ -9,10 +9,8 @@ import irc.bot, irc.connection
 
 class EB3( irc.bot.SingleServerIRCBot ):
     """Usage: EB3( config=dict, data=dict, wrSelf=self ) """
-    def __init__( self, 
-            wrSelf,
-            config,
-            data ):
+    def __init__( self, wrSelf, config, dataDir ):
+        self.dataDir = dataDir + config.nick
         serverSpec = irc.bot.ServerSpec( config.server, config.port,config.sPass )
         if config.useSSL: #Whether to use SSL or not
             ssl_factory = irc.connection.Factory( wrapper=ssl.wrap_socket )
