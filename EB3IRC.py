@@ -13,16 +13,18 @@ class EB3( irc.bot.SingleServerIRCBot ):
             wrSelf,
             config,
             data ):
+        serverSpec = irc.bot.ServerSpec( config.server, config.port,config.sPass )
         if config.useSSL: #Whether to use SSL or not
             ssl_factory = irc.connection.Factory( wrapper=ssl.wrap_socket )
             irc.bot.SingleServerIRCBot.__init__( self, 
-                    [(config.server, config.port)], 
-                    config.nickname, config.realname, 
-                    connect_factory=ssl_factory)
+                [serverSpec], config.nick, config.realname, 
+                connect_factory=ssl_factory)
         else:
             irc.bot.SingleServerIRCBot.__init__( self,
-                [(config.server, config.port)],
-                config.nickname, config.realname)
+                [serverSpec], config.nick, config.realname)
         self.data = data
         self.config = config
         self.wrapper = wrSelf # Allows bot module to call / contact wrapper
+
+
+

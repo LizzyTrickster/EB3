@@ -1,0 +1,14 @@
+{
+  "HTTP": {},
+  "IRC": {
+    "BRTD": {
+      "nick": "Brain",
+      "port": 6697,
+      "realname": "",
+      "sPass": "",
+      "server": "thedarkirc.co",
+      "useSSL": true
+    }
+  },
+  "XMPP": {}
+}
