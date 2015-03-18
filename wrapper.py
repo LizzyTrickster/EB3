@@ -8,6 +8,7 @@ import json, sys, threading
 bots = dict()
 
 GlobalData = dict()
+GlobalDataLock = threading.RLock()
 
 class configulator( object ):
     """ Configuration Manager """
@@ -32,6 +33,7 @@ class configulator( object ):
             elif not bool(create):
                 print( "[ERROR] Config file ({f}) not found! Are you sure that it's there?".format(f=confFile) )
                 sys.exit(2)
+
     
 class TheWrapper( theading.thread ):
     """ Wrapper for EB3 submodules """
