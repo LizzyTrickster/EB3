@@ -2,6 +2,8 @@
 EB3, generation 3 (first iteration) of my IRC Bot
 
 The code here is not complete at all and will most likely not work, I am working on a newer version so this is just here for legacy purposes.
+ Beep
+
 
 How this was planned to work:
 
